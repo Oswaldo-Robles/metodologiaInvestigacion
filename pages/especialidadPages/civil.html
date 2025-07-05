@@ -1,0 +1,115 @@
+<div class="page-header">
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="title-header">FI
+            <span class="subtitle-header">Ingenieria Civil</span>
+        </h1>
+
+        <nav class="breadcrumb-pill">
+            <span class="current">Especialidad</span>
+            <span class="separator">&gt;</span>
+            <span class="current">Ingenieria Civil</span>
+        </nav>
+    </div>
+</div>
+
+<div class="mb-3">
+
+</div>
+
+<section class="padded">
+    <div class="container">
+
+        <div class="mb-3">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-insert"
+                aria-controls="offcanvas-insert">Nuevo Alumno</button>
+            <button class="btn btn-secondary" id="btn-volver">
+                ← Volver
+            </button>
+        </div>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tema de investigación</th>
+                    <th>Informe de investigación</th>
+                    <th>Especialidad</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbody-alumnos-civil"></tbody>
+        </table>
+    </div>
+</section>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-insert" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Nuevo Alumno</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <form id="form-insert" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre del alumno" required
+                    minlength="4">
+            </div>
+
+            <div class="mb-3">
+                <label for="updateTema" class="form-label">Tema de investigación</label>
+                <textarea name="tema" id="Tema" class="form-control" rows="4" placeholder="Describe el tema de investigación" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="informe" class="form-label">Informe (.docx)</label>
+                <input type="file" name="informe" id="informe" class="form-control" accept=".docx">
+            </div>
+
+            <input type="hidden" name="especialidad" value="Civil">
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit"> Guardar </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-Update" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Actualizar datos</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <form id="form-update" enctype="multipart/form-data">
+
+            <input type="hidden" name="_method" value="PUT">
+
+            <div class="mb-3">
+                <input type="text" name="id" id="updateId" class="form-control" readonly>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="nombre" class="form-control" id="updateNombre" placeholder="Nombre del alumno"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="updateTema" class="form-label">Tema de investigación </label>
+                <textarea name="tema" id="updateTema" class="form-control" rows="4" placeholder="Describe el tema de investigación" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="updateInforme" class="form-label">Reemplazar informe (.doc)</label>
+                <input type="file" name="informe" id="updateInforme" class="form-control" accept=".doc">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Actualizar</button>
+            </div>
+        </form>
+
+    </div>
+</div>
