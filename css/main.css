@@ -26,6 +26,9 @@ h1 {
     line-height: 25px !important;
 }
 
+.text-dark-blue {
+  color: #0b2240 !important; /* azul oscuro profesional */
+}
 /**********************************************/
 /*page-header*/
 .page-header {

@@ -49,9 +49,9 @@
         const formData = new FormData(formInsert);
 
         fetch(window.SERVICIOURL + `/apiMetodologia/industrial.php`, {
-                method: "POST",
-                body: formData
-            })
+            method: "POST",
+            body: formData
+        })
             .then((response) => response.json()) // ⚠️ ya que tu PHP devuelve JSON
             .then(data => {
                 console.log("Respuesta del servidor:", data);
@@ -76,9 +76,9 @@
         const formData = new FormData(formUpdate);
 
         fetch(window.SERVICIOURL + `/apiMetodologia/industrial.php`, {
-                method: "POST",
-                body: formData
-            })
+            method: "POST",
+            body: formData
+        })
             .then((response) => response.text())
             .then(data => {
                 console.log(data);
@@ -88,14 +88,16 @@
             })
     }
 
-    formInsert.addEventListener("submit", (event) =>
-        insertAlumno(event)
-    );
+    formInsert.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("⚠️ Función deshabilitada para esta vista.");
+    });
 
+    formUpdate.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("⚠️ Actualización deshabilitada temporalmente.");
+    });
 
-    formUpdate.addEventListener("submit", (event) =>
-        updateAlumno(event)
-    );
 
     const modalHTML = `
             <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
@@ -136,31 +138,7 @@
     });
 
     document.getElementById("btnConfirmarEliminar").addEventListener("click", () => {
-        if (!idAlumnoAEliminar) return;
-
-        const formData = new FormData();
-        formData.append("_method", "DELETE");
-        formData.append("id", idAlumnoAEliminar);
-
-        fetch(`${window.SERVICIOURL}/apiMetodologia/industrial.php`, {
-                method: "POST",
-                body: formData
-            })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log("Eliminado:", data);
-                if (data.success) {
-                    dibujarTabla();
-                    bootstrap.Modal.getInstance(document.getElementById("modalEliminar")).hide();
-                    idAlumnoAEliminar = null;
-                } else {
-                    alert("No se pudo eliminar el alumno.");
-                }
-            })
-            .catch((err) => {
-                console.error(err);
-                alert("Error al eliminar.");
-            });
+        alert("⚠️ Eliminación deshabilitada temporalmente.");
     });
 
 
