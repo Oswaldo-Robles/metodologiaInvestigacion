@@ -1,5 +1,5 @@
 "use strict"
-window.SERVICIOURL = "https://ecotasty.store/metodologiaInvestigacion";
+window.SERVICIOURL = "https://nexttravel.site/metodologiaInvestigacion";
 
 const logoNavbarBrand = document.getElementById("logo-navbar-brand");
 const mainContent = document.getElementById("main-content");
